@@ -1,0 +1,67 @@
+<!DOCTYPE hml>
+<html style="background-image: url(https://media.giphy.com/media/U3qYN8S0j3bpK/giphy.gif)">
+<head>
+	
+	<title>ENCRIPTADOR</title>
+	<meta charset="UTF-8">
+
+	<header style="background-color:#9D7ACF; opacity:1.0; filter:alpha(opacity=30); color:#C70039;text-align: center;margin-left:80px;margin-right:50px; padding:5px; margin-bottom: 30px ";>
+		<h1 style="display:inline-block;width:1080px;font-family:Castellar;">Encriptador Alura Challenge</h1>
+
+	</header>
+	
+</head>
+
+<body style="display:inline-block;" >
+
+	<input type="text" id="nomest" placeholder="INGRESAR TEXTO(SIN MAYUSCULAS NI ACENTOS)" size="130"; style="border-radius:10px;width:500px;margin-left:120px; padding: 80px 80px; background-color:#334139; opacity:0.5; filter:alpha(opacity=30); color:white";>
+
+	<input type="text" id="resultado" placeholder="                              RESPUESTA" text="center"; style="border-radius: 10px;width:500px; margin-right:80px; padding: 80px 80px; background-color:#334139;opacity:0.5; filter:alpha(opacity=30);  color:white;"  >
+</body>
+
+	<br><br><br>
+
+<button type="button" style="padding: 20px 30px; display:inline-block; width: 30%; margin-left:65px ; background-color:#9D7ACF;opacity:1.0; filter:alpha(opacity=30);  color: #933761;font-family:Castellar;font-weight:bold; border-radius:10px; box-shadow:2px 2px 2px "; onclick="encriptar()" > ENCRIPTAR</button>
+
+<button type="button" style="padding: 20px 30px; display:inline-block; width: 30%;background-color:#9D7ACF;opacity:1.0; filter:alpha(opacity=30);  color:#933761;font-family:Castellar;font-weight:bold; border-radius:10px; box-shadow:2px 2px 2px " onclick="desencriptar()">DESENCRIPTAR</button>
+
+<button type="button" style="padding: 20px 30px; display:inline-block; width: 30%; background-color:#9D7ACF;opacity:1.0; filter:alpha(opacity=30);  color:#933761
+;font-family:Castellar;font-weight:bold; border-radius:10px; box-shadow:2px 2px 2px " onclick="copy()">COPIAR TEXTO</button>
+
+<script>
+
+	//var button = document.querySelector("button")
+	var input = document.querySelector("input");
+	input.focus()
+
+	function encriptar(){ 
+	var cadena=input.value
+	var cadena2=cadena.replace("e","enter").replace("i","imes").replace("a","ai").replace("o","ober").replace("u","ufat");
+	
+	//console.log(cadena2)
+	document.getElementById('resultado').value= cadena2;//lo imprimer en el input resultado
+	input.value="";
+	}
+
+	function desencriptar(){ //Aqui se ingresa el texto copiado (encriptado)
+	
+	var cadena=input.value
+	var	cadena2=cadena.replace("enter","e").replace("imes","i").replace("ai","a").replace("ober","o").replace("ufat","u")
+	//console.log(cadena3)
+	document.getElementById('resultado').value= cadena2;//lo imprime en el input resultado
+	input.value="";
+	}
+
+	function copy() {
+	var copyText = document.getElementById("resultado");
+	copyText.select();
+	document.execCommand("copy");
+	}
+
+</script>
+	<footer style="text-align: center;margin-left:450px;margin-right:450px ;color:#9D7ACF; background-color: #3B333E
+; border-radius:3px;box-shadow:-4px 2px 2px pink;">
+	            <p>Creado por: Valeria Valencia Cárdenas</p>
+	            <p>Para Alura challenge</p>
+	</footer>
+</html>
